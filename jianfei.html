@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>数据统计</title>
+<script src="jquery-3.2.1.min.js"></script>
+<script src="highcharts.js"></script>
+</head>
+<body>
+<div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
+<script language="JavaScript">
+$(document).ready(function() {
+   var title = {
+      text: '变瘦变美'   
+   };
+   var subtitle = {
+      text: 'Thinner and more beautiful'
+   };
+   var xAxis = {
+      categories: ['17', '18', '19', '20']
+   };
+   var yAxis = {
+      title: {
+         text: '体重(kg)'
+      },
+      plotLines: [{
+         value: 0,
+         width: 1,
+         color: '#808080'
+      }]
+   };   
+
+   var tooltip = {
+      valueSuffix: 'kg'
+   }
+
+   var legend = {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
+      borderWidth: 0
+   };
+
+   var series =  [
+      {
+         name: '陈洁',
+         data: [64.75,64.75,66,65.5]
+      }, 
+      {
+         name: '美林',
+         data: [62,61,61.1,61.75]
+      },
+   ];
+
+   var json = {};
+
+   json.title = title;
+   json.subtitle = subtitle;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.tooltip = tooltip;
+   json.legend = legend;
+   json.series = series;
+
+   $('#container').highcharts(json);
+});
+</script>
+</body>
+</html>
